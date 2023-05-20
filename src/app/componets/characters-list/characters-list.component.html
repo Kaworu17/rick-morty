@@ -1,0 +1,57 @@
+<div class="list-container">
+  <a
+    (click)="showInfo(character)"
+    *ngFor="let character of displayedCharacters"
+    class="character-card"
+  >
+    <img
+      [src]="character.image"
+      [alt]="character.name"
+      class="character-card-img"
+    />
+    <div class="character-card-name">
+      {{ character.name }}
+    </div>
+    <div class="character-card-id">Id: {{ character.id }}</div>
+  </a>
+</div>
+
+<div class="pagination-elements">
+  <button
+    mat-icon-button
+    (click)="previousPage()"
+    [disabled]="currentLocalPage === 1"
+    [ngClass]="{ 'disabled-button': currentLocalPage === 1 }"
+  >
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <span>{{ "app.page" | translate }} {{ currentLocalPage }}</span>
+  <button
+    mat-icon-button
+    (click)="nextPage()"
+    [disabled]="endIndex >= allCharacters.length"
+    [ngClass]="{ 'disabled-button': endIndex >= allCharacters.length }"
+  >
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>
+
+<div class="character-details" *ngIf="selectedCharacter" (click)="hideInfo()">
+  <div class="character-details-card">
+    <div class="character-details-card-background">
+      <img
+        [src]="selectedCharacter.image"
+        [alt]="selectedCharacter.name"
+        class="character-details-card-img"
+      />
+    </div>
+    <div class="character-details-card-footer">
+      <h2>{{ selectedCharacter.name }}</h2>
+      <p>ID: {{ selectedCharacter.id }}</p>
+      <p>Species: {{ selectedCharacter.species }}</p>
+      <!--<p>Type: {{ selectedCharacter.type }}</p> -->
+      <!--<p>Gender: {{ selectedCharacter.gender }}</p> -->
+      <!-- Agrega más información si es necesario -->
+    </div>
+  </div>
+</div>
