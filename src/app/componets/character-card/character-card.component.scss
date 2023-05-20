@@ -1,0 +1,24 @@
+.character-container {
+  width: 160px;
+
+  img {
+    width: 160px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .character-card-name {
+    font-size: 12px;
+    text-align: left;
+    padding: 5px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .character-card-id {
+    font-size: 12px;
+    text-align: left;
+    padding: 0px 10px 8px;
+  }
+}

@@ -16,13 +16,19 @@ import {
   TranslateService,
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { CharacterCardComponent } from './componets/character-card/character-card.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 @NgModule({
-  declarations: [AppComponent, CharactersListComponent, HeaderBarComponent],
+  declarations: [
+    AppComponent,
+    CharactersListComponent,
+    HeaderBarComponent,
+    CharacterCardComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

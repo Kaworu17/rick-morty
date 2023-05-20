@@ -22,7 +22,7 @@
 }
 
 .character-card {
-  width: 160px;
+  width: 160px !important;
   box-sizing: border-box;
   text-align: center;
   background-color: #3c3e44;
@@ -37,25 +37,9 @@
     transition: all 0.2s ease-in-out;
   }
 
-  &-img {
+  character-card {
     width: 160px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-  }
-
-  &-name {
-    font-size: 12px;
-    text-align: left;
-    padding: 5px 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  &-id {
-    font-size: 12px;
-    text-align: left;
-    padding: 0px 10px 8px;
+    display: block;
   }
 }
 
